@@ -77,6 +77,7 @@ void Settings::setDefaults()
 	mBoolMap["HideConsole"] = true;
 	mBoolMap["QuickSystemSelect"] = true;
 	mBoolMap["MoveCarousel"] = true;
+	mBoolMap["OnScreenKeyboard"] = false;
 
 	mBoolMap["ThreadedLoading"] = false;
 

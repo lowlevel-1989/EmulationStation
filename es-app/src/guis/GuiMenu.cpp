@@ -238,6 +238,12 @@ void GuiMenu::openUISettings()
 	s->addWithLabel("QUICK SYSTEM SELECT", quick_sys_select);
 	s->addSaveFunc([quick_sys_select] { Settings::getInstance()->setBool("QuickSystemSelect", quick_sys_select->getState()); });
 
+	// on screen keyboard
+	auto on_screen_keyboard = std::make_shared<SwitchComponent>(mWindow);
+	on_screen_keyboard->setState(Settings::getInstance()->getBool("OnScreenKeyboard"));
+	s->addWithLabel("ON SCREEN KEYBOARD", on_screen_keyboard);
+	s->addSaveFunc([on_screen_keyboard] { Settings::getInstance()->setBool("OnScreenKeyboard", on_screen_keyboard->getState()); });
+
 	// carousel transition option
 	auto move_carousel = std::make_shared<SwitchComponent>(mWindow);
 	move_carousel->setState(Settings::getInstance()->getBool("MoveCarousel"));
